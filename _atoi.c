@@ -4,7 +4,7 @@
  * interactive - returns true if shell is interactive mode
  * @info: struct address
  *
- * Return: if interactive mode 1 , 0 otherwise
+ * Return:  if interactive mode 1 , 0 otherwise
  */
 int interactive(info_t *info)
 {
@@ -13,53 +13,53 @@ int interactive(info_t *info)
 
 /**
  * is_delim - checks if character is a delimeter
- * @n: the char to check
+ * @x: The char to check
  * @delim: the delimeter string
- * Return: 1 if true, 0 if false
+ * Return:  If true 1 ,  If false 0
  */
-int is_delim(char n, char *delim)
+int is_delim(char x, char *delim)
 {
 	while (*delim)
-		if (*delim++ == n)
+		if (*delim++ == x)
 			return (1);
 	return (0);
 }
 
 /**
- * _isalpha - checks for alphabetic character
- * @m: The character to input
- * Return:  If m is alphabetic 1 , 0 otherwise
+ *_isalpha - checks for alphabetic character
+ *@x: The char to input
+ *Return: If x is alphabetic 1 ,  Otherwise 0
  */
 
-int _isalpha(int m)
+int _isalpha(int x)
 {
-	if ((m >= 'a' && m <= 'z') || (m >= 'A' && m <= 'Z'))
+	if ((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z'))
 		return (1);
 	else
 		return (0);
 }
 
 /**
- * _atoi - converts a string to an integer
- * @f: the string to be converted
- * Return:  0 If no numbers in string, converted number otherwise
+ *_atoi - converts a string to an integer
+ *@r: The string to be converted
+ *Return:  If no numbers in string 0 , converted number otherwise
  */
 
-int _atoi(char *f)
+int _atoi(char *r)
 {
-	int h, sign = 1, flag = 0, output;
+	int y, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (h = 0; f[h] != '\0' && flag != 2; h++)
+	for (y = 0;  r[y] != '\0' && flag != 2; y++)
 	{
-		if (f[h] == '-')
+		if (r[y] == '-')
 			sign *= -1;
 
-		if (f[h] >= '0' && f[h] <= '9')
+		if (r[y] >= '0' && r[y] <= '9')
 		{
 			flag = 1;
 			result *= 10;
-			result += (f[h] - '0');
+			result += (r[y] - '0');
 		}
 		else if (flag == 1)
 			flag = 2;
@@ -72,8 +72,4 @@ int _atoi(char *f)
 
 	return (output);
 }
-
-
-
-
 
